@@ -88,6 +88,17 @@ trust list | grep -i "DoD" | sort | uniq
 echo "Done."
 ```
 
+## Smartcard
+```bash
+pacman -S --noconfirm \
+    pcsclite \
+    ccid \
+    opensc
+sudo systemctl enable pcscd
+sudo systemctl start pcscd
+modutil -dbdir sql:$HOME/.pki/nssdb/ -add "CAC Module" -libfile /usr/lib/opensc-pkcs11.so
+```
+
 ## Waybar
 
 ### Clock
