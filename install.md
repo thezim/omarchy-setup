@@ -9,7 +9,7 @@ omarchy-update
 ## Packages
 
 ```bash
-pacman -S --noconfirm \
+sudo pacman -S --noconfirm \
     yq \
     jq \
     powershell \
@@ -18,6 +18,15 @@ pacman -S --noconfirm \
     file \
     visual-studio-code-bin \
     opencode
+```
+
+## SSH
+
+```bash
+sudo pacman -S --noconfirm openssh
+sudo systemctl enable sshd
+sudo systemctl start sshd
+sudo ufw allow ssh
 ```
 
 ## Certificates
@@ -97,6 +106,15 @@ pacman -S --noconfirm \
 sudo systemctl enable pcscd
 sudo systemctl start pcscd
 modutil -dbdir sql:$HOME/.pki/nssdb/ -add "CAC Module" -libfile /usr/lib/opensc-pkcs11.so
+```
+
+## Ghostty
+
+SUPER + ALT + SPACE -> Install -> Terminal -Ghostty
+
+```bash
+
+
 ```
 
 ## Waybar
