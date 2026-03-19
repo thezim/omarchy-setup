@@ -13,7 +13,6 @@ sudo pacman -S --noconfirm \
     yq \
     jq \
     powershell \
-    ghostty \
     aws-cli-v2 \
     file \
     visual-studio-code-bin \
