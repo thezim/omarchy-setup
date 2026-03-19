@@ -113,8 +113,9 @@ modutil -dbdir sql:$HOME/.pki/nssdb/ -add "CAC Module" -libfile /usr/lib/opensc-
 SUPER + ALT + SPACE -> Install -> Terminal -Ghostty
 
 ```bash
-
-
+mkdir -p $HOME/.config/ghostty/shaders
+cp ./ghostty/shaders/cursor_blaze.glsl $HOME/.config/ghostty/shaders/
+echo "\n\ncustom-shader = $HOME/.config/ghostty/shaders/cursor_blaze.glsl\n" >> $HOME/.config/ghostty/config
 ```
 
 ## Waybar
