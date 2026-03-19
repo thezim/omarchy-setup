@@ -113,9 +113,32 @@ modutil -dbdir sql:$HOME/.pki/nssdb/ -add "CAC Module" -libfile /usr/lib/opensc-
 SUPER + ALT + SPACE -> Install -> Terminal -Ghostty
 
 ```bash
+update_config() {
+    local key="$1"
+    local value="$2"
+    local file="$3"
+
+    if [[ ! -f "$file" ]]; then
+        echo "Error: File $file not found."
+        return 1
+    fi
+
+    # Check if key exists (at start of line)
+    if grep -q "^$key[[:blank:]]*=" "$file"; then
+        # Update existing key, preserving original spacing
+        sed -i "s|^\($key\)\([[:blank:]]*=[[:blank:]]*\).*|\1\2$value|" "$file"
+    else
+        # Append new key-value pair to the end of the file
+        echo "$key = $value" >> "$file"
+    fi
+}
+
 mkdir -p $HOME/.config/ghostty/shaders
 cp ./ghostty/shaders/cursor_blaze.glsl $HOME/.config/ghostty/shaders/
-echo "\n\ncustom-shader = $HOME/.config/ghostty/shaders/cursor_blaze.glsl\n" >> $HOME/.config/ghostty/config
+
+update_config "custom-shader" "$HOME/.config/ghostty/shaders/cursor_blaze.glsl" "$HOME/.config/ghostty/config"
+update_config "font-size" "12" "$HOME/.config/ghostty/config"
+update_config "font-family" "CascadiaCode Nerd Font" "$HOME/.config/ghostty/config"
 ```
 
 ## Waybar
