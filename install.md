@@ -19,6 +19,12 @@ sudo pacman -S --noconfirm \
     opencode
 ```
 
+## PowerShell
+
+```bash
+yay -S powershell-bin
+```
+
 ## SSH
 
 ```bash
