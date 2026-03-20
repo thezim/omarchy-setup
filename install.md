@@ -104,7 +104,7 @@ echo "Done."
 
 ## Smartcard
 ```bash
-pacman -S --noconfirm \
+sudo pacman -S --noconfirm \
     pcsclite \
     ccid \
     opensc
