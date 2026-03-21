@@ -10,7 +10,6 @@ omarchy-update
 
 ```
 echo "\nalias ls='LC_COLLATE=C /usr/bin/ls -la --color --group-directories-first'" >> $HOME/.local/share/omarchy/default/bash/aliases
-
 ```
 
 ## Packages
@@ -174,4 +173,22 @@ sed 's#//.*##g' $HOME/.config/waybar/config.jsonc | jq '
 
 ```bash
 sed 's#//.*##g' $HOME/.config/waybar/config.jsonc | jq '.height = 26' > $HOME/.config/waybar/config.jsonc.tmp && mv $HOME/.config/waybar/config.jsonc.tmp $HOME/.config/waybar/config.jsonc
+```
+
+## Oh My Posh
+
+```bash
+curl -s https://ohmyposh.dev/install.sh | bash -s
+```
+
+```bash
+sed -i 's/^\s*eval "$(starship init bash)"/# eval "$(starship init bash)"/' $HOME/.local/share/omarchy/default/bash/init
+```
+
+```bash
+cat <<'EOF' >> $HOME/.local/share/omarchy/default/bash/init
+if command -v oh-my-posh &> /dev/null; then
+  eval "$(oh-my-posh init bash --config $HOME/.posh_themes/thezim.omp.yaml)"
+fi
+EOF
 ```
