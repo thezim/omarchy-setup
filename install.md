@@ -194,7 +194,7 @@ EOF
 ```
 
 ```powershell
+cp -r .posh_themes $HOME/
 mkdir -p $HOME/.config/powershell
 'oh-my-posh init pwsh --config $HOME/.posh_themes/thezim.omp.yaml | Invoke-Expression' >> $PROFILE
-
 ```
