@@ -173,6 +173,7 @@ sed 's#//.*##g' $HOME/.config/waybar/config.jsonc | jq '
 
 ```bash
 sed 's#//.*##g' $HOME/.config/waybar/config.jsonc | jq '.height = 26' > $HOME/.config/waybar/config.jsonc.tmp && mv $HOME/.config/waybar/config.jsonc.tmp $HOME/.config/waybar/config.jsonc
+sed -i '0,/font-size: [0-9]\+px;/s//font-size: 16px;/' $HOME/.config/waybar/style.css
 ```
 
 ## Oh My Posh
