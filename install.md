@@ -197,4 +197,17 @@ EOF
 cp -r .posh_themes $HOME/
 mkdir -p $HOME/.config/powershell
 'oh-my-posh init pwsh --config $HOME/.posh_themes/thezim.omp.yaml | Invoke-Expression' >> $PROFILE
+@'
+# Native ls utility function
+function Invoke-ListDirectory {
+    param (
+        [Parameter(Mandatory = $false, Position = 0, ValueFromRemainingArguments = $true)]$Remaining
+    )
+    $defaultargs = @("-la","--color","--group-directories-first")
+    $env:LC_COLLATE = "C"
+    ls $defaultargs @Remaining
+    Remove-Item Env:\LC_COLLATE
+}
+Set-Alias -Name ls -Value Invoke-ListDirectory
+'@ >> $PROFILE
 ```
