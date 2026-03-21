@@ -192,3 +192,9 @@ if command -v oh-my-posh &> /dev/null; then
 fi
 EOF
 ```
+
+```powershell
+mkdir -p $HOME/.config/powershell
+'oh-my-posh init pwsh --config $HOME/.posh_themes/thezim.omp.yaml | Invoke-Expression' >> $PROFILE
+
+```
