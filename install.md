@@ -113,7 +113,8 @@ echo "Done."
 sudo pacman -S --noconfirm \
     pcsclite \
     ccid \
-    opensc
+    opensc \
+    pcsc-tools
 sudo systemctl enable pcscd
 sudo systemctl start pcscd
 modutil -dbdir sql:$HOME/.pki/nssdb/ -add "CAC Module" -libfile /usr/lib/opensc-pkcs11.so
