@@ -183,6 +183,12 @@ curl -s https://ohmyposh.dev/install.sh | bash -s
 ```
 
 ```bash
+mkdir -p $HOME/.local/share/fonts
+cp ./fonts/CascadiaCode.Nerd.Font.Complete.ttf ./fonts $HOME/.local/share/fonts
+fc-cache -fv
+```
+
+```bash
 sed -i 's/^\s*eval "$(starship init bash)"/# eval "$(starship init bash)"/' $HOME/.local/share/omarchy/default/bash/init
 ```
 
