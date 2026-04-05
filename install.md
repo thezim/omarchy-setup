@@ -9,7 +9,7 @@ omarchy-update
 ## ls
 
 ```
-echo "\nalias ls='LC_COLLATE=C /usr/bin/ls -la --color --group-directories-first'" >> $HOME/.local/share/omarchy/default/bash/aliases
+echo "alias ls='LC_COLLATE=C /usr/bin/ls -la --color --group-directories-first'" >> $HOME/.local/share/omarchy/default/bash/aliases
 ```
 
 ## Packages
