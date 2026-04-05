@@ -18,7 +18,6 @@ echo "alias ls='LC_COLLATE=C /usr/bin/ls -la --color --group-directories-first'"
 sudo pacman -S --noconfirm \
     yq \
     jq \
-    powershell \
     aws-cli-v2 \
     file \
     visual-studio-code-bin \
